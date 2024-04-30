@@ -12,7 +12,7 @@ To initalize program, run the command "make" to initilize project
 make
 ```
 
-Once program is initialized, use the following command to run
+Once program is initialized, use the following command to run excecutable with csv file containing user data
 ```makefile
 ./project2 rooms.csv
 ```
