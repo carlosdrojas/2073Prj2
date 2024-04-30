@@ -8,6 +8,7 @@ int main(int argc, char* argv[]) {
     FILE *fileIn;
     //RoomRecord *record;
     RoomRecord record[20];
+    Guest guests[20];
     int i;
     int j;
     int choice;
