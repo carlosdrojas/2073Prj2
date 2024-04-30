@@ -18,7 +18,6 @@ Once program is initialized, use the following command to run excecutable with c
 ```
 
 Once done using program, use the following command to clear directory of excecutable files
-Once program is initialized, use the following command to run
 ```makefile
 make clean
 ```
