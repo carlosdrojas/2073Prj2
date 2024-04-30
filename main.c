@@ -63,14 +63,24 @@ int main(int argc, char* argv[]) {
 
     
     while (1) {
-        printMenu();
 
+        //printMenu();
+        printf( "\n\n######### Hotel Database MENU #########\n");
+        printf( "1. Login as Guest\n" );
+        printf( "2. Login as Staff\n" );
+        printf( "3. Exit\n" );
+        printf( "Enter your selection: " );
         scanf("%d", &choice);
 
         if (choice == 1) {
             while (1) {
                 //guestLogin();
-                guestOptions();
+                //guestOptions();
+                printf( "\n1. Book Rooms\n" );
+                printf( "2. Edit Reservations\n" );
+                printf( "3. View Room Bookings\n" );
+                printf( "4. Exit\n" );
+                printf( "Enter your selection: " );
                 scanf("%d", &choice);
 
                 if (choice == 1) {
@@ -99,7 +109,12 @@ int main(int argc, char* argv[]) {
             while (1) {
                 staffLogin();
 
-                staffOptions();
+                //staffOptions();
+                printf( "\n1. Add/Remove Rooms\n" );
+                printf( "2. Manage Bookings\n" );
+                printf( "3. View Room Availability\n" );
+                printf( "4. Exit\n" );
+                printf( "Enter your selection: " );
                 scanf("%d", &choice);
 
                 if (choice == 1) {
