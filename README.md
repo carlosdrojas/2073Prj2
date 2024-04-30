@@ -14,7 +14,7 @@ make
 
 Once program is initialized, use the following command to run
 ```makefile
-make
+./project2 rooms.csv
 ```
 
 Once done using program, use the following command to clear directory of excecutable files
