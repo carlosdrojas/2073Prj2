@@ -86,7 +86,8 @@ int main(int argc, char* argv[]) {
             while (1) {
                 //guestLogin();
                 //guestOptions();
-                printf( "\n1. Book Rooms\n" );
+                printf( "\n\n######### Guest MENU #########\n");
+                printf( "1. Book Rooms\n" );
                 printf( "2. Edit Reservations\n" );
                 printf( "3. View Room Bookings\n" );
                 printf( "4. Exit\n" );
@@ -141,7 +142,8 @@ int main(int argc, char* argv[]) {
                 staffLogin();
 
                 //staffOptions();
-                printf( "\n1. Add/Remove Rooms\n" );
+                printf( "\n\n######### Staff MENU #########\n");
+                printf( "1. Add/Remove Rooms\n" );
                 printf( "2. Manage Bookings\n" );
                 printf( "3. View Room Availability\n" );
                 printf( "4. Exit\n" );
