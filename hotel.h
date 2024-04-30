@@ -25,7 +25,7 @@ typedef struct {
 } Staff;
 
 
-void guestLogin();
+void guestLogin(int);
 
 void staffLogin();
 

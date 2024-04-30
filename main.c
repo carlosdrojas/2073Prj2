@@ -13,6 +13,10 @@ int main(int argc, char* argv[]) {
     int j;
     int choice;
     int guestNum;
+    int guestID;
+    int checkIn;
+    int checkOut;
+    int roomNum;
 
     if ( argc < 2 ) {
     printf( "ERROR: Missing file name" );
@@ -29,6 +33,12 @@ int main(int argc, char* argv[]) {
         printf( "ERROR: Coult not open file" );
         return -1;
     }
+
+    fclose( fileIn );
+
+    //TODO: function to fill room records
+    //createRecords( fileIn, &record );
+
 
     for (i = 0; i < 20; i++) {
         record[i].roomNumber = i + 1;
@@ -84,6 +94,27 @@ int main(int argc, char* argv[]) {
                 scanf("%d", &choice);
 
                 if (choice == 1) {
+                    printf("Enter Guest ID: ");
+                    scanf("%d", &guestID);
+                    printf("Enter room number: ");
+                    scanf("%d", &roomNum);
+                    printf("Enter check-in date: ");
+                    scanf("%d", &checkIn);
+                    printf("Enter check out date: ");
+                    scanf("%d", &checkOut);
+
+                    for (i = 0; i < 20; i++) {
+                        if (roomNum == record[i].roomNumber) {
+                            for (j = 0; j < 90; j++) {
+                                if (j >= checkIn && j <= checkOut) {
+                                    record[i].availability[j - 1] = guestID;
+                                }
+                            }
+                        }
+                    }
+
+                    printf("Thank you for booking!\n");
+
 
                 }
                 else if (choice == 2) 
@@ -142,6 +173,28 @@ int main(int argc, char* argv[]) {
         {
             break;
         } 
+        //temp debug chioce, remove once done
+        //--------
+        else if (choice == 4) 
+        {
+            for (i = 0; i < 20; i++) {
+                printf("Room %d: \n", i + 1);
+                if (record[i].roomType == SINGLE) {
+                    printf("Room Type: Single\n");
+                }
+                else if (record[i].roomType == DOUBLE) {
+                    printf("Room Type: Double\n");
+                }
+                else if (record[i].roomType == SUITE) {
+                    printf("Room Type: Suite\n");
+                }
+                for (j = 0; j < 90; j++) {
+                    printf("Day %d: %d\n", j + 1, record[i].availability[j]);
+                }
+                printf("\n");
+            }     
+        } 
+        //--------
         else
         {
             printf("invalid choice.");
