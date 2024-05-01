@@ -1,7 +1,40 @@
 //Source file to define functions
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "hotel.h"
+
+void fillRecords(FILE *fileIn, RoomRecord *record, Guest *guests) {
+    char buffer[1024];
+    int guestID;
+    char name[20];
+    int roomNum;
+    int reserveID;
+    int checkIn;
+    int checkOut;
+    int i;
+    int j;
+    int guestNum = 0;
+
+    while (fgets(buffer, 1024, fileIn) != NULL) {
+        sscanf( buffer, "%d,%[^,],%d,%d,%d,%d", &guestID, name, &roomNum, &reserveID, &checkIn, &checkOut );
+        guests[guestNum].guestID = guestID;
+        strcpy(guests[guestNum].name, name);
+        for (i = 0; i < 20; i++) {
+            if (record[i].roomNumber == roomNum) {
+                record[i].guestID = guestID;
+                record[i].reservationID = reserveID;
+                for (j = 0; j < 90; j++) {
+                    if (j >= checkIn && j <= checkOut) {
+                        record[i].availability[j] = reserveID;
+                    }
+                }
+            }
+        }
+        guestNum++;
+    }
+
+}
 
 void guestLogin(int guestNum) {
     int choice;

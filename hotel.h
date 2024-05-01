@@ -10,6 +10,8 @@ typedef enum {
 
 typedef struct {
     int roomNumber;
+    int reservationID;
+    int guestID;
     int availability[90];
     RoomType roomType;
 } RoomRecord;
@@ -17,13 +19,14 @@ typedef struct {
 typedef struct Guest {
     int guestID;
     char name[50];
-    struct Guest* next;
+    //FIXME: add more info for guests
 } Guest;
 
 typedef struct {
     int staffID;
 } Staff;
 
+void fillRecords(FILE*, RoomRecord*, Guest*);
 
 void guestLogin(int);
 
