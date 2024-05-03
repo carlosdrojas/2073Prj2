@@ -6,7 +6,7 @@ manage the bookings of a hotel.
 
 ## Usage
 
-To initalize program, run the command "make" to create and link object files
+To initalize program, run the command "make" in a command line to create and link object files
 
 ```makefile
 make

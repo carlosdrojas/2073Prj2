@@ -10,8 +10,6 @@ typedef enum {
 
 typedef struct {
     int roomNumber;
-    int reservationID;
-    int guestID;
     int availability[90];
     RoomType roomType;
 } RoomRecord;
@@ -19,25 +17,23 @@ typedef struct {
 typedef struct Guest {
     int guestID;
     char name[50];
-    //FIXME: add more info for guests
+    char emailAddress[50];
+    char phoneNumber[20];
+    char address[50];
 } Guest;
 
 typedef struct {
     int staffID;
 } Staff;
 
-void fillRecords(FILE*, RoomRecord*, Guest*);
+int getRandomNumber(int, int);
 
-void guestLogin(int);
+int fillRecords(FILE*, RoomRecord*, Guest*);
+
+void createRecords(FILE*, RoomRecord*, Guest*, int);
+
+int guestLogin(int*, Guest*);
 
 void staffLogin();
-
-void printMenu();
-
-void guestOptions();
-
-void staffOptions();
-
-
 
 #endif
